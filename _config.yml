@@ -21,7 +21,7 @@ title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "JuYoung Seo"
 description              : "처음부터 끝까지 천천히 걸어가는 블로그"
-url                      : "https://juzerokr.github.io"
+url                      : #"https://juzerokr.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
