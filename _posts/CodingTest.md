@@ -76,6 +76,8 @@ DP
 - https://leetcode.com/problems/longest-palindromic-subsequence/description/
 - https://www.acmicpc.net/problem/22358
 
+Binary-Search
+- https://leetcode.com/problems/arranging-coins/description/
 
 ETC
 - https://www.acmicpc.net/problem/31772
