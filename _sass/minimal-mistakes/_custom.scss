@@ -1,48 +1,17 @@
-.simple-post-list-item {
-    border-bottom: 1px solid #eaeaea;
-    padding: 1.2rem 0;
+.page {
+    display: flex;
+    gap: 2rem;
   }
   
-  .simple-post-title {
-    font-size: 1.2rem;
-    margin: 0 0 0.4rem;
-    color: #2c3e50;
+  .page__content {
+    flex: 1;
+    padding: 2rem 1.5rem;
+    max-width: 800px;
   }
   
-  .simple-post-title a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  .simple-post-excerpt {
-    font-size: 0.95rem;
-    color: #555;
-    margin: 0.3rem 0 0;
-  }
-  
-  // 개별 카테고리 페이지 포스트 목록 여백 추가
-  .archive__item {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-    margin-bottom: 2rem;
-  }
 
-  
-  .page.categories {
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  .archive__item-title {
-    margin-bottom: 0.3rem;
-  }
-  
-  .archive__item-excerpt {
-    font-size: 0.95rem;
-    color: #555;
-  }
-
-  .entries-list, .entries-grid {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .entries-list {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
   }
