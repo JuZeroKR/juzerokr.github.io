@@ -4,18 +4,12 @@
     <a href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a>
   </h2>
 
-  {% assign cat = page.category | downcase %}
-  {% assign posts = site.categories[cat] %}
-  {% assign entries_layout = page.entries_layout | default: 'list' %}
-  
-  {% if posts %}
-    <div class="entries-{{ entries_layout }}">
-      {% for post in posts %}
-        {% include archive-single.html type=entries_layout %}
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No posts found in this category.</p>
+  {% include page__meta.html type=include.type %}
+
+  {% if post.excerpt %}
+    <p class="simple-post-excerpt" itemprop="description">
+      {{ post.excerpt | markdownify | strip_html | truncate: 140 }}
+    </p>
   {% endif %}
 
 </article>
