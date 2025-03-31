@@ -1,6 +1,12 @@
-# main links
 main:
   - title: "Home"
     url: /index.html
   - title: "Category"
     url: /categories/
+    children:
+      - title: "Daily"
+        url: /categories/daily/
+      - title: "BookReview"
+        url: /categories/bookreview/
+      - title: "Algoritm"
+        url: /categories/algorithm/

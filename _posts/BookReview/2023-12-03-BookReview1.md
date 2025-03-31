@@ -5,7 +5,7 @@ toc: true
 toc_sticky: true
 toc_label: 목차
 categories:
-    - BookReview
+    - bookreview
 ---
 
 ## 제목 : 일머리 문해력

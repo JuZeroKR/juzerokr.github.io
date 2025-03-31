@@ -1,0 +1,21 @@
+# Jekyll output
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
+# Ruby specific
+*.gem
+*.rbc
+.bundle/
+vendor/
+Gemfile.lock
+
+# macOS system files
+.DS_Store
+
+# VSCode settings (optional)
+.vscode/
+
+# Logs
+*.log
