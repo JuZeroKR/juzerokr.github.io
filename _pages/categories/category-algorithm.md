@@ -1,7 +1,8 @@
 ---
 title: "Algorithm (알고리즘)"
-layout: archive
-permalink: categories/algorithm
+layout: category
+category:  algorithm
+permalink: /categories/algorithm/
 author_profile: true
 sidebar_page: true
 ---

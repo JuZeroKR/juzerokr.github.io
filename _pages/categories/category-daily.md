@@ -1,7 +1,8 @@
 ---
 title: "Daily"
-layout: archive
-permalink: categories/daily
+layout: category
+category:  daily
+permalink: /categories/daily/
 author_profile: true
 sidebar_page: true
 ---
