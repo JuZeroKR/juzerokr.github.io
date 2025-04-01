@@ -234,12 +234,7 @@ nav:
     path: /categories/
   - label: Tags
     path: /tags/
-  - label: Algorithm
-    path: /categories/algorithm/
-  - label: Daily
-    path: /categories/daily/
-  - label: BookReview
-    path: /categories/bookreview/
+
 
 
 page:
