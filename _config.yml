@@ -147,8 +147,6 @@ pwa:
     deny_paths:
       # - "/example"  # URLs match `<SITE_URL>/example/*` will not be cached by the PWA
 
-paginate: 10
-
 # The base URL of your site
 baseurl: ""
 
@@ -240,3 +238,18 @@ nav:
 page:
   sidebar:
     nav: "main"
+
+plugins:
+  - jekyll-paginate-v2
+
+pagination:
+  enabled: true
+  per_page: 5
+  sort_field: "date"
+  sort_reverse: true
+
+pagination_pages:
+  - path: /categories/algorithm/
+    layout: category
+    title: "Algorithm"
+    category: algorithm

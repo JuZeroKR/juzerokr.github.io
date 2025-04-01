@@ -1,21 +1,49 @@
 ---
-layout: post
+layout: page
 ---
-<div class="page__content">
 
-  {% assign cat = page.category | downcase %}
-  {% assign posts = site.categories[cat] %}
-  {% assign entries_layout = page.entries_layout | default: 'list' %}
+<h2>Debug</h2>
+<p>paginator.category: {{ paginator.category }}</p>
+<p>paginator.posts count: {{ paginator.posts | size }}</p>
+<ul>
+  {% for post in paginator.posts %}
+    <li>{{ post.title }} | {{ post.categories }}</li>
+  {% endfor %}
+</ul>
 
-  {% if posts %}
-    <div class="entries-{{ entries_layout }}">
-      {% for post in posts %}
-        {% include archive-single.html post=post type=entries_layout %}
-      {% endfor %}
-    </div>
-  {% else %}
-    <p>No posts found in this category.</p>
-  {% endif %}
+<h2>site.categories</h2>
+<ul>
+  {% for cat in site.categories %}
+    <li>{{ cat[0] }}: {{ cat[1] | size }}</li>
+  {% endfor %}
+</ul>
 
+<h1>Category: {{ page.title }}</h1>
 
-</div>
+{% if paginator.posts %}
+  <ul>
+    {% for post in paginator.posts %}
+      <li><a href="{{ post.url }}">{{ post.title }}</a> - {{ post.date | date: "%Y-%m-%d" }}</li>
+    {% endfor %}
+  </ul>
+
+  <div class="pagination">
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path }}">← Prev</a>
+    {% endif %}
+
+    {% for i in (1..paginator.total_pages) %}
+      {% if i == paginator.page %}
+        <strong>{{ i }}</strong>
+      {% else %}
+        <a href="{{ paginator.paginate_path | replace: ':num', i }}">{{ i }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path }}">Next →</a>
+    {% endif %}
+  </div>
+{% else %}
+  <p>No posts found in this category.</p>
+{% endif %}
