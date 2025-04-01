@@ -170,6 +170,8 @@ collections:
     sort_by: order
   posts:
     output: true
+  pages:
+    output: true
 
 defaults:
   - scope:
@@ -192,6 +194,13 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: page
+      permalink: /:title/
+  
 
 sass:
   style: compressed
@@ -224,32 +233,3 @@ jekyll-archives:
   permalinks:
     tag: /tags/:name/
     category: /categories/:name/
-
-nav:
-  - label: About
-    path: /about/
-  - label: Categories
-    path: /categories/
-  - label: Tags
-    path: /tags/
-
-
-
-page:
-  sidebar:
-    nav: "main"
-
-plugins:
-  - jekyll-paginate-v2
-
-pagination:
-  enabled: true
-  per_page: 5
-  sort_field: "date"
-  sort_reverse: true
-
-pagination_pages:
-  - path: /categories/algorithm/
-    layout: category
-    title: "Algorithm"
-    category: algorithm

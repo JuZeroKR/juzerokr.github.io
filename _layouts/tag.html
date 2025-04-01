@@ -1,17 +1,16 @@
 ---
 layout: page
-# The Category layout
+# The layout for Tag page
 ---
 
 {% include lang.html %}
 
-<div id="page-category">
+<div id="page-tag">
   <h1 class="ps-lg-2">
-    <i class="far fa-folder-open fa-fw text-muted"></i>
+    <i class="fa fa-tag fa-fw text-muted"></i>
     {{ page.title }}
     <span class="lead text-muted ps-2">{{ page.posts | size }}</span>
   </h1>
-
   <ul class="content ps-0">
     {% for post in page.posts %}
       <li class="d-flex justify-content-between px-md-3">
