@@ -1,9 +1,10 @@
 ---
 title: "[독서기록] 일머리 문해력"
-layout: single
+layout: post
 toc: true
 toc_sticky: true
 toc_label: 목차
+categories: [bookreview]
 ---
 
 ## 제목 : 일머리 문해력

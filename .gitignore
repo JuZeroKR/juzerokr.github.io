@@ -1,21 +1,27 @@
-# Jekyll output
-_site/
-.sass-cache/
-.jekyll-cache/
-.jekyll-metadata
-
-# Ruby specific
-*.gem
-*.rbc
-.bundle/
-vendor/
+# Bundler cache
+.bundle
+vendor
 Gemfile.lock
 
-# macOS system files
-.DS_Store
+# Jekyll cache
+.jekyll-cache
+.jekyll-metadata
+_site
 
-# VSCode settings (optional)
-.vscode/
+# RubyGems
+*.gem
 
-# Logs
-*.log
+# NPM dependencies
+node_modules
+package-lock.json
+
+# IDE configurations
+.idea
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+!.vscode/tasks.json
+
+# Misc
+_sass/vendors
+assets/js/dist
