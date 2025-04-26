@@ -114,3 +114,18 @@ Solid 타입인지 검사하는 코드입니다.
 
 CATIARelation의 `get_Value` 함수를 통해 Rule 구문을 가져왔을경우 모든 파라미터 앞에 Part 파일의 주소가 붙습니다.  
 당연한 이야기이지만.. 이것을 그대로 Rule 구문에 넣어서 Modify을 하면 리턴은 성공이 나오지만 구문 자체는 바뀌지 않습니다.  (문법 오류로 바뀌지 않는듯합니다.)
+
+
+## 기존 생성되어 있던 CATIA Rule가져오기 (25-04-26 추가)
+
+CATIAPart 인터페이스에서 CATIARelations를 가져옵니다.  
+CATIARelations method인 get_Count와 Item을 사용하여 반복문을 통해 순차적으로 가져오면됩니다.  
+이때 주의해야할 점은 Rule를 제외하고 다른 포맷의 Relation까지 얻게됩니다.  
+이를 CATISpecObject_var로 형변환 시킨 후 GetType을 통해 `RelationExpPg`인 Realtion만 선택하면됩니다.
+
+
+## Rule 내에 파라미터로 작성되어있던 Object가 Delete되었을 때 (25-04-26 추가)
+
+이 경우 우리는 구문 내에 Relations\\(Parameter이름)\\(Object이름) 형태와 함께 deleted라는 문구를 볼 수 있습니다.  
+하지만, 생성된 Rule을 한번 클릭해야 위 문구로 변환이되며, 만약 클릭하지 않는다면.. 원래 구문 형태의 포맷이 나오게됩니다.
+
