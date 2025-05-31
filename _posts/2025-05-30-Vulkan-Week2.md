@@ -122,7 +122,6 @@ if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
 ![3D 마우스 프로세스 설명](/assets/images/Vulkan3DProcessMouse.png)
 
 지금 카메라 바라보는 방향을 1이라고 가정하고 고개를 든 각도와 돌린 각도를 각각 두고 계산을 해보았습니다.  
-확실히 그림을 그리면서 하는게 저한텐 이해가 잘되었습니다.   
 
 ```c++
 void processMouseMovement(double xpos, double ypos) {
@@ -133,7 +132,7 @@ void processMouseMovement(double xpos, double ypos) {
         }
 
         float xoffset = xpos - lastX;
-        float yoffset = ypos - lastY; // Reversed since y-coordinates range from bottom to top
+        float yoffset = ypos - lastY;
         lastX = xpos;
         lastY = ypos;
 
