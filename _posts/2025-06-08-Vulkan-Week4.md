@@ -49,7 +49,7 @@ void VulkanCore::generateGridData() {
                 color = glm::vec3(0.1f, 0.1f, 0.1f);  // 어두운 회색
             }
             
-            gridVertices.push_back({{posX, -1.0f, posZ}, color});
+            gridVertices.push_back({{ posX, -1.0f, posZ }, color});
         }
     }
     
