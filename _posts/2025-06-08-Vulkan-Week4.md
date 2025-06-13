@@ -24,56 +24,7 @@ WASD키를 이용해서 큐브를 움직이고, 카메라는 큐브 뒤에 일�
 현재 화면에는 큐브만 보이는 상태입니다. 큐브를 이동시켜봤자 아무런 변화를 못느끼겠죠.  
 그렇기에 저는 임시 바닥을 생성하여 큐브 이동을 확인할 예정입니다.  
 
-먼저 격자의 vertex 위치를 생성하여 저장해둡니다.
-
-```c++
-void VulkanCore::generateGridData() {
-    gridVertices.clear();
-    gridIndices.clear();
-    
-    const int gridSize = 30;  // 30x30 격자 (더 넓은 바닥)
-    const float gridSpacing = 0.5f;  // 더 촘촘한 격자 간격
-    const float gridOffset = (gridSize - 1) * gridSpacing * 0.5f;  // 중앙 정렬
-    
-    // 격자 정점 생성
-    for (int x = 0; x < gridSize; x++) {
-        for (int z = 0; z < gridSize; z++) {
-            float posX = x * gridSpacing - gridOffset;
-            float posZ = z * gridSpacing - gridOffset;
-            
-            // 검은 배경에 어울리는 격자 패턴
-            glm::vec3 color;
-            if ((x + z) % 2 == 0) {
-                color = glm::vec3(0.3f, 0.3f, 0.3f);  // 밝은 회색
-            } else {
-                color = glm::vec3(0.1f, 0.1f, 0.1f);  // 어두운 회색
-            }
-            
-            gridVertices.push_back({{ posX, -1.0f, posZ }, color});
-        }
-    }
-    
-    // 격자 인덱스 생성 (삼각형 쌍)
-    for (int x = 0; x < gridSize - 1; x++) {
-        for (int z = 0; z < gridSize - 1; z++) {
-            int i = x * gridSize + z;
-            int iNext = (x + 1) * gridSize + z;
-            
-            // 첫 번째 삼각형
-            gridIndices.push_back(i);
-            gridIndices.push_back(iNext);
-            gridIndices.push_back(i + 1);
-            
-            // 두 번째 삼각형
-            gridIndices.push_back(iNext);
-            gridIndices.push_back(iNext + 1);
-            gridIndices.push_back(i + 1);
-        }
-    }
-}
-```
-
-이후에 격자 정보를 넘기기 위한 Buffer를 생성해줍니다. (Index, Vertex)  
+격자 정보를 넘기기 위한 Buffer를 생성해줍니다. (Index, Vertex)  
 
 ```c++
 void VulkanCore::createGridBuffers() {
